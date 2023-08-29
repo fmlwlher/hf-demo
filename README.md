@@ -6,11 +6,11 @@
 
 ## Getting started
 
-#### Prepare Environment
+#### 准备环境
 
 * Ganache
 
-First of all you need to install [Ganache](https://trufflesuite.com/ganache/), by
+首先你需要安装 [Ganache](https://trufflesuite.com/ganache/), by
 
 ```shell
 npm install -g ganache-cli
@@ -18,47 +18,47 @@ npm install -g ganache-cli
 
 * Truffle
 
-Then you have to install [Truffle](https://trufflesuite.com/docs/truffle/), by
+接着你需要安装 [Truffle](https://trufflesuite.com/docs/truffle/), by
 
 ```shell
 npm install -g truffle
 ```
 
-#### Install
+#### 安装依赖
 
-Open the root directory of the project and run commad
+打开工程目录运行以下命令
 
 ```shell
 npm install
 ```
 
-#### Run Blockchain
+#### 运行区块链
 
-You can open a terminal window and go to the root directory of the project and run commad
+打开一个终端窗口在工程根目录下运行以下命令
 
 ```shell
 npm run ganache-chainA
 ```
 
-Then open another terminal window and go to the root directory of the project and run commad
+打开另一个终端窗口在工程根目录下运行以下命令
 
 ```shell
 npm run ganache-chainB
 ```
 
-#### Unit Test
+#### 单元测试
 
-After running a test blockchain, you can open the root directory of the project and run commad
+在本地启动区块链后，在工程根目录运行以下命令
 
 ```shell
 npm run test
 ```
 
-## Tutorial
+## 教程
 
 #### Run The Dapp
 
-The web client is writen by VUE,  It provides an easy way to swap tokens between two different EVM based blockchain by using the HTLC, after running two test blockchain (A and B), then you have to deploy HTLC on those two blockchain, you can go to the root directory of the project and update the file `truffle-config.js` , you have to post your two blockchains' info on this file like this
+web客户端是用vue实现的，它实现了在两个基于EVM的区块链之间进行代币转换的简单的功能，采用哈希时间锁的方式实现。在本地启动了两个区块链网络（A和B）之后,还需要在两个网络上部署HTLC智能合约， 在工程根目录下打开文件 `truffle-config.js` , 你可以像下面那样修改文件内容
 
 ```js
 module.exports = {
@@ -79,13 +79,13 @@ module.exports = {
 }
 ```
 
-then you can run command to deploy HTLC on chainA
+然后运行以下命令在chainA上部署合约
 
 ```shell
 truffle deploy
 ```
 
-and record the HTLC contract address(A)
+然后记录下合约地址contract address(A)
 
 ```
 ...
@@ -116,7 +116,7 @@ and record the HTLC contract address(A)
 
 ```
 
-then you have to update the `truffle-config.js` file again, like this
+然后再次更新文件 `truffle-config.js`, 内容如下
 
 ```js
 module.exports = {
@@ -137,9 +137,9 @@ module.exports = {
 }
 ```
 
-and run `truffle deploy` again, record the HTLC contract address(B)
+再次运行命令 `truffle deploy` , 记录合约地址 contract address(B)
 
-after all those steps above, you have to update the file `.env.development`
+在完成以上的步骤后，你还需要更新文件 `.env.development`
 
 ```
 NODE_ENV='development'
@@ -151,13 +151,13 @@ VUE_APP_HTLC_ADDRB='0x31920CE32269aE5a2f836455EB8C2cd1e2F2D493' # chainB
 
 ```
 
-then run command at the root directory of the project
+在工程跟目录下运行以下命令
 
 ```shell
 npm run dev
 ```
 
-If every thing works ok, you may see a notice like this:
+如果一切正常，你将看到输出以下信息:
 
 > DONE  Compiled successfully in 4067ms
 >                                                                                              
@@ -166,7 +166,7 @@ If every thing works ok, you may see a notice like this:
 >  - Local:   http://localhost:80/ 
 >  - Network: http://192.168.244.1:80/
 
-Then you can open the link in your browser, there are 4 routes that correspond to different functions:
+然后你可以在你的浏览器打开链接, 4个功能分别对应以下四个路由接口:
 
 > * /newTx
 > * /getTx
